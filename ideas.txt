@@ -1,0 +1,15 @@
+based on the project already done on esp32:
+
+the extend functions should be like this:
+
+1. the camera can take pics(videos) when i send commands and store the videos or pics into the sd card, 
+by sending the commands, to tell if the videos needed to the send to the computer or not, if i want, then 
+send the pics or videos into my computer or phone.
+
+2. show some pics in the ips screen like the pics that the camera shoot.
+
+3. add some more application into esp32, like iphone info notify(ble), tell the weather info if i want
+
+4. design new pcb with voice recognization and realize the game or applications switch.
+
+
