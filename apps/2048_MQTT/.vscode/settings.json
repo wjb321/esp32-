@@ -1,0 +1,13 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "cmake.sourceDirectory": "${workspaceFolder}/.pio/libdeps/pico32/ArduinoJson",
+    "idf.adapterTargetName": "esp32",
+    "files.associations": {
+        "map": "cpp",
+        "memory": "cpp",
+        "stl_algobase.h": "c",
+        "ble.h": "c",
+        "ble2902.h": "c",
+        "bledescriptor.h": "c"
+    }
+}
