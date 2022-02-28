@@ -1,0 +1,120 @@
+#include <WiFi.h>
+#include <ESPmDNS.h>
+#include <PubSubClient.h>
+
+#define SERVER_IP "192.168.1.113" // IP or DNS name
+#define SERVER_PORT 2000 // Port >= 2000
+WiFiClient client;
+
+//#define MQTT_SERVER_IP "192.168.1.113" // MQTT Server IP/hostname
+#define MQTT_SERVER_IP "192.168.137.1"
+#define MQTT_PORT 1883 // Port of MQTT Server
+
+WiFiClient mqttClient;
+PubSubClient mqtt(mqttClient);
+
+#define NAME "Puzzle0"
+
+/* terry creats wifi by phone(makes computer has 2.4GHz wifi not 5Ghz)，amd my computer creates
+a mew wifi named below for esp32 to connect(2.4Ghz) and then fill the debugger with the given mqtt server ip from 
+up(it is gotten from my computer ipconfig)because now my computer now is the server for locals, later i can change 
+it into the server ip where escape room has */
+/* #define SSID "whatever"
+#define PWD "youlike!!" */
+
+#define SSID "whatever"
+#define PWD "youlike!!" 
+
+#define BUTTON_PIN 5
+#define LED_PIN 1
+#define COM_SPEED 115200
+void mqttCallback(char* topic, byte* message, unsigned int length);
+void setup() {
+// put your setup code here, to run once:
+Serial.begin(COM_SPEED);
+//pinMode(LED_PIN, OUTPUT);
+//pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+//digitalWrite(LED_PIN, HIGH);
+
+Serial.print("Connecting to ");
+Serial.println(SSID);
+WiFi.setHostname(NAME);
+WiFi.begin(SSID, PWD);
+// Wait while not connected
+while (WiFi.status() != WL_CONNECTED) {
+delay(500); 
+Serial.print(".");
+}
+// Print IP
+Serial.println("\nWiFi connected.\nIP Adress: ");
+Serial.println(WiFi.localIP());
+
+// Setting up mDNS
+if (!MDNS.begin(NAME)) {
+Serial.println("Error setting up MDNS responder!");
+}
+MDNS.addService("_escape", "_tcp", 2000);
+// Connect the client
+if (client.connect(SERVER_IP, SERVER_PORT))
+{
+Serial.println("Connected to server");
+client.println("Hello!");
+}
+else {
+Serial.println("Cannot connect to server");
+}
+
+mqtt.setCallback(mqttCallback);
+
+mqtt.setServer(MQTT_SERVER_IP, MQTT_PORT);
+// MQTT connect
+if (mqtt.connect(NAME)) {
+Serial.println("Connected to MQTT server");
+// Publish a message
+const char * topic = "myPuzzle/status";
+bool retained = false;
+mqtt.publish(topic, "hello world", retained);
+} else {
+Serial.println("Cannot connect to MQTT server");
+}
+
+mqtt.subscribe("myPuzzle/set");
+Serial.println("Setup done");
+}
+
+void loop() {
+const char * topic = "myPuzzle/status";
+bool retained = false;
+mqtt.loop(); // Only required if you subscribe to sth
+mqtt.publish(topic, "hello world", retained);
+//Serial.println("hello world");
+delay(1000);
+//Serial.println("hello");
+// put your main code here, to run repeatedly:
+bool value = digitalRead(BUTTON_PIN);
+if (!value) {
+Serial.println("Button pressed");
+delay(1000);
+}
+
+if (client.available()) {
+delay(10);
+String msg = client.readStringUntil('\n');
+client.printf("Echo: %s\r\n", msg.c_str());
+}
+}
+
+#define MAX_MSG 50
+char msg[MAX_MSG] = {'\0'};
+
+// MQTT Callback function
+void mqttCallback(char* topic, byte* message, unsigned int length) {
+// Convert to cstring
+int len = min((int)length, (int)(MAX_MSG-1));
+memcpy(s( (char *) message)[0], message, len);
+msg[len] = '\0';
+
+// Print incoming msg
+Serial.printf("MQTT msg on topic: %s: %s\n", topic, s( (char *) message));
+}

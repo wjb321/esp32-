@@ -1,0 +1,4 @@
+source "E:/c++_tencent_class/esp_idf_extension_for_VC/esp-idf/components/app_update/Kconfig.projbuild"
+source "E:/c++_tencent_class/esp_idf_extension_for_VC/esp-idf/components/bootloader/Kconfig.projbuild"
+source "E:/c++_tencent_class/esp_idf_extension_for_VC/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "E:/c++_tencent_class/esp_idf_extension_for_VC/esp-idf/components/partition_table/Kconfig.projbuild"

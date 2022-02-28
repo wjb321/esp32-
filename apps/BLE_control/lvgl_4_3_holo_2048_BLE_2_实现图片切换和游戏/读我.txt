@@ -1,0 +1,5 @@
+This is where no error is reported, but the image cannot be displayed. The logic is executable.
+This is similar to the code of gif_image_load and internal c_array, the former does not print images, but the latter does, after modifying the former accordingly.
+But it is not very clear where the reason is, it just works after removing the file system, network system and sd. I guess it is possible that there is a problem with the corresponding configuration in the former that causes the image not to load.
+For example, the value of some part of the configuration is enabled or disable, etc.
+The end result is: the backlight configuration is not displaying except for the problem, and now the BLE control is relatively ok.
