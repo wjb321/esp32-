@@ -1,0 +1,183 @@
+#include "game2048.h"
+#include <Arduino.h>
+#include "lv_cubic_gui.h"
+#include "game2048_controller.h"
+#include "app_controller.h"
+#include "common.h"
+#include <esp32-hal-timer.h>
+#include "BLE.h"
+#include <ArduinoJson.h>
+
+
+extern bool deviceConnected;
+extern bool oldDeviceConnected;             //the state of last connection
+//extern pServer 
+extern String msg;
+app_num1 = 0;
+cur_app_index1 = 0;
+pre_app_index1 = 0;
+
+/*json starts*/    
+/* void taskOne(void *parameter)
+{
+    while (1)
+    {
+        //心跳任务
+        lv_tick_inc(5);
+        delay(5);
+    }
+    Serial.println("Ending task 1");
+    vTaskDelete(NULL);
+}
+
+void taskTwo(void *parameter)
+{
+    while (1)
+    {
+        // LVGL任务主函数
+        screen.routine();
+        delay(5);
+    }
+    Serial.println("Ending task 2");
+    vTaskDelete(NULL);
+}
+ */
+//GAME2048 game;
+//BLE ble;
+
+
+/* struct Game2048Rundata
+{
+    int Normal = 0;       //记录移动的方向
+    int BornLocation = 0; //记录新棋子的位置
+    int *p;
+    int *moveRecord;
+    BaseType_t xReturned_task_one = NULL;
+    TaskHandle_t xHandle_task_one = NULL;
+    BaseType_t xReturned_task_two = NULL;
+    TaskHandle_t xHandle_task_two = NULL;
+
+}; */
+/* static Game2048Rundata *run_data = NULL;
+void Game_init(void)
+{
+ lv_holo_cubic_gui();
+ 
+    randomSeed(analogRead(25));
+    // 初始化运行时参数
+    run_data = (Game2048Rundata *)calloc(1, sizeof(Game2048Rundata));
+    game.init();
+    run_data->p = game.getBoard();
+    run_data->moveRecord = game.getMoveRecord();
+
+    run_data->xReturned_task_one = xTaskCreate(
+        taskOne,                  
+        "TaskOne",                 
+        10000,                       
+        NULL,                        
+        1,                         
+        &run_data->xHandle_task_one); 
+
+    run_data->xReturned_task_two = xTaskCreate(
+        taskTwo,                     
+        "TaskTwo",                  
+        10000,                      
+        NULL,                        
+        1,                           
+        &run_data->xHandle_task_two); 
+    //刷新棋盘显示
+    int new1 = game.addRandom();
+    int new2 = game.addRandom();
+    showBoard(run_data->p);
+    //棋子出生动画
+    born(new1);
+    born(new2);
+    // 防止进入游戏时，误触发了向上
+    delay(1000);
+
+} */
+
+void homepage(AppController *sys, const MQTT_Action *act_info)
+{
+
+//StaticJsonBuffer<300> JSONbuffer; // arduino 5
+StaticJsonDocument<300>  JSONbuffer;// arduino 6
+//JsonObject JSONencoder = JSONbuffer.createObject();
+//ble.setupBLE("Escaple_Room");
+if (deviceConnected) {
+    delay(50);  //delay for aviod the data writen 
+   if (RETURN == act_info->active)
+    {
+        Serial.println("it is Home Page");
+    }
+    lv_scr_load_anim_t anim_type = LV_SCR_LOAD_ANIM_NONE;
+        if (TURN_LEFT == act_info->active)
+        {
+            anim_type = LV_SCR_LOAD_ANIM_MOVE_RIGHT;
+            pre_app_index1 = cur_app_index1;
+            cur_app_index1 = (cur_app_index1 + 1) % app_num1;
+            Serial.println(String("Current App: ") + appList[cur_app_index1]->app_name);
+	        //BLE part
+            String str=msg;
+            const char *newValue=str.c_str();
+            pCharacteristic->setValue(newValue);
+	        msg="";
+            pCharacteristic->notify();
+        }
+        else if (TURN_RIGHT == act_info->active)
+        {
+            anim_type = LV_SCR_LOAD_ANIM_MOVE_LEFT;
+            pre_app_index1 = cur_app_index1;
+            // 以下等效与 processId = (processId - 1 + APP_NUM) % 4;
+            // +3为了不让数据溢出成负数，而导致取模逻辑错误
+            cur_app_index1 = (cur_app_index1 - 1 + app_num) % app_num; // 此处的3与p_processList的长度一致
+            Serial.println(String("Current App: ") + appList[cur_app_index1]->app_name);
+	        //BLE part
+            String str=msg;
+            const char *newValue=str.c_str();
+            pCharacteristic->setValue(newValue);
+	        msg="";
+            pCharacteristic->notify();
+        }
+
+  }
+
+  if (!deviceConnected && oldDeviceConnected) {
+        delay(500); // give the bluetooth stack the chance to get things ready
+        pServer->startAdvertising(); // restart advertising
+        Serial.println("start advertising");
+        oldDeviceConnected = deviceConnected;
+    }
+    // connecting
+    if (deviceConnected && !oldDeviceConnected) {
+		// do stuff here on connecting
+        oldDeviceConnected = deviceConnected;
+    }
+	
+    // disconnecting
+    if (!deviceConnected && oldDeviceConnected)
+    {
+        delay(500);                  // buffering time for bluetooth
+        pServer->startAdvertising(); // rebroadcasting
+        Serial.println(" startAdvetising ");
+        oldDeviceConnected = deviceConnected;
+    }
+
+    // connecting  
+    if (deviceConnected && !oldDeviceConnected)
+    {
+        // do stuff here on connecting
+        oldDeviceConnected = deviceConnected;
+    }
+}
+
+/* APP_OBJ game_2048_app = {"GAME", &number_game, "", Game_init,
+                         game_2048_process, game_2048_exit_callback};//,game_2048_event_notification */
+                         
+
+Interface_OBJ escape_homepage = {"EscapeRoom", &EscapeRoom, homepage};//,game_2048_event_notification
+                         
+/*
+* 随机刷新一个2或4
+* 返回刷新的位置
+*/

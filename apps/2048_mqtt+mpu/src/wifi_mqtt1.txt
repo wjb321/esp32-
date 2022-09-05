@@ -1,0 +1,13 @@
+#ifndef WIFI_MQTT_H
+#define WIFI_MQTT_H
+
+#include <WiFi.h>
+#include <ESPmDNS.h>
+#include <PubSubClient.h>
+#include <Arduino.h>
+//#define MAX_MSG 50
+//extern char msg[MAX_MSG];
+void wifi_mqtt_configure();
+void mqttCallback(char* topic, byte* message, unsigned int length);
+void mqtt_loop();
+#endif
