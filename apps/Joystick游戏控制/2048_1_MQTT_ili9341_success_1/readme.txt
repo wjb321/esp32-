@@ -1,7 +1,7 @@
-此处是最初的BLE经过将自己的游戏数字进行编码植入后看到的最后的效果。
+Here is the final effect seen by the original BLE after coding its own game figures for implantation.
 
-目标：
+Objectives:
 
-1 添加照片，并能够通过指令让照片切换并进入游戏状态（动画形式）或者动态图的形式
-2 游戏结束完成目标之后，显示新的图片，表示对下一个puzzle的提示
-3 保存突然断电的当前状态，在再次供电之后能够直接进入原始状态
+1 Add photos and be able to make them switch and enter the game state (in animated form) or in the form of a motion picture by command
+2 Show a new picture after the end of the game to complete the goal, indicating a hint for the next puzzle
+3 Save the current state of the sudden power failure, so that after the power supply again can directly enter the original state
