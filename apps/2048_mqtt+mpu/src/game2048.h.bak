@@ -1,9 +1,5 @@
 #ifndef APP_GAME_2048_H
 #define APP_GAME_2048_H
-/*
-there are places that different apps can be extended here
-for example: weather, alblum, video
-*/
 //#include "wifi_mqtt.h"
 #include "interface.h"
 #include <PubSubClient.h>

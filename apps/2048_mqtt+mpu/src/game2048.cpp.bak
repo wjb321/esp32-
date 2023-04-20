@@ -144,7 +144,7 @@ void game_2048_process(AppSwitch *sys, const Imu_Action *act_info)
     }
     if (game.judge() == 1)  //when reach the score and then send mqtt commands to next game
     {
-       //send json code by mqtt
+    
         JSONbuffer["method"] = "trigger";
         JSONbuffer["state"] = "off";
         JSONbuffer["data"] = "skipped";
@@ -190,7 +190,7 @@ void game_2048_process(AppSwitch *sys, const Imu_Action *act_info)
         
     }
 
-    // add some delay routine in the program
+    // 程序需要时可以适当加延时
     delay(300);
 }
 
@@ -198,7 +198,7 @@ void game_2048_process(AppSwitch *sys, const Imu_Action *act_info)
 
 void game_2048_exit_callback(void)
 {
-    // check the timers afterwards
+    // 查杀定时器
     if (run_data->xReturned_task_one == pdPASS)
     {
         vTaskDelete(run_data->xHandle_task_one);
@@ -209,7 +209,7 @@ void game_2048_exit_callback(void)
     }
 
     game_2048_gui_del();
-    // free the sources
+    // 释放资源
     free(run_data);
     run_data = NULL;
 }

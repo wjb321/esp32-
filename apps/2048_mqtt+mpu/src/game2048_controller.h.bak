@@ -1,6 +1,5 @@
 #ifndef GAME2048_H
 #define GAME2048_H
-//define the scores and when finishing the sending the mqtt commands
 //#include <stdio.h>
 #include <iostream>
 using namespace std;

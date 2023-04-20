@@ -1,9 +1,6 @@
 #ifndef APP_CONTORLLER_GUI_H
 #define APP_CONTORLLER_GUI_H
-/*
-add interfaces icon(png) for different interfaces
-and define initial some functions
-*/
+
 #ifdef __cplusplus
 extern "C"
 {

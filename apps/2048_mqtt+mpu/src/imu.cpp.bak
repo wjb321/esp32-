@@ -1,6 +1,6 @@
 #include "imu.h"
 #include "common.h"
-//mpu for direction detection
+
 const char *active_type_info[] = {"TURN_RIGHT", "RETURN",
                                   "TURN_LEFT", "UP",
                                   "DOWN", "Enter_App",

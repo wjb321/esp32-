@@ -1,7 +1,5 @@
+
 /* mainly the app control animation*/
-/*
-lvgl GUI design for the game.
-*/
 #include "app_switch_gui.h"
 #include "Arduino.h"
 #include "common.h"
@@ -59,7 +57,7 @@ void display_app_scr_init(const void *src_img_path, const char *app_name)
     lv_obj_t *act_obj = lv_scr_act(); // 获取当前活动页
    /*  if (act_obj == app_scr)
     {
-        
+        // 防止一些不适用lvgl的APP退出 造成画面在无其他动作情况下无法绘制更新
         lv_scr_load_anim(app_scr, LV_SCR_LOAD_ANIM_NONE, 300, 300, false);
         return;
     } */
@@ -68,14 +66,14 @@ void display_app_scr_init(const void *src_img_path, const char *app_name)
     lv_img_set_src(gif_bg1,&youwin);
     lv_obj_align(gif_bg1, NULL, LV_ALIGN_CENTER, 0, 0);  */
     
-    //add app icons
+    //添加APP的图标
     lv_obj_clean(act_obj); // 清空此前页面
     pre_app_image = lv_img_create(app_scr, NULL);
     lv_img_set_src(pre_app_image, src_img_path);
     pre_img_path = src_img_path;
     lv_obj_align(pre_app_image, NULL, LV_ALIGN_CENTER, 0, 0);
 
-    // add app name
+    // 添加APP的名字
     pre_app_name = lv_label_create(app_scr, NULL);
     lv_obj_add_style(pre_app_name, LV_LABEL_PART_MAIN, &app_name_style);
     // lv_label_set_recolor(pre_app_name, true); //先得使能文本重绘色功能
@@ -92,7 +90,7 @@ void display_app_scr_init(const void *src_img_path, const char *app_name)
 
 void app_contorl_display_scr(const void *src_img, const char *app_name, lv_scr_load_anim_t anim_type, bool force)
 {
-    // force, then fresh the display
+    // force为是否强制刷新页面 true为强制刷新
     if (true == force)
     {  
         //Serial.print(F("3,chongxin chushihua:  "));

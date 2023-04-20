@@ -1,6 +1,6 @@
 #include "game2048_controller.h"
 #include <Arduino.h>
-//directions for the game
+
 int GAME2048::addRandom() {
     int rand;
     while (1) {

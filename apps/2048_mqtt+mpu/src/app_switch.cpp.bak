@@ -1,7 +1,7 @@
 /*
 *mainly the control app logic then use this logic as the input of app_switch_gui.
+*here use https://github.com/ClimbSnail and https://github.com/AndyXFuture as references. 
 *still there are many applications can be extended.
-*for example the video, camera, albulms etc
 */
 #include "app_switch.h"
 #include "app_switch_gui.h"

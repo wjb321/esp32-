@@ -2,9 +2,6 @@
 #ifndef APP_CONTORLLER_H
 #define APP_CONTORLLER_H
 
-/*
-below is the part for switching status of the application that I need.
-*/
 #include "Arduino.h"
 #include "interface.h"
 #include "imu.h"

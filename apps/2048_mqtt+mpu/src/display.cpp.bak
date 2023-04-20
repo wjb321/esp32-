@@ -3,7 +3,6 @@
 
 /*
 TFT pins should be set in path/to/Arduino/libraries/TFT_eSPI/User_Setups/Setup24_ST7789.h
-start lvgl display
 */
 TFT_eSPI tft = TFT_eSPI();
 

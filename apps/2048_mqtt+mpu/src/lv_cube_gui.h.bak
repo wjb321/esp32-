@@ -14,7 +14,7 @@ extern "C" {
 #include "lvgl.h"
 #define ANIEND                      \
     while (lv_anim_count_running()) \
-        lv_task_handler(); //wait for the animation finnished
+        lv_task_handler(); //等待动画完成
 	//extern lv_img_dsc_t screen_buffer;
 
 

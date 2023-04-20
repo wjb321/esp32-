@@ -1,6 +1,6 @@
 #ifndef IMU_H
 #define IMU_H
-//mpu configutations
+
 #include <I2Cdev.h>
 #include <MPU6050.h>
 #include "lv_port_indev.h"

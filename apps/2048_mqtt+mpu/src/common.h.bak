@@ -14,11 +14,11 @@
 #ifdef __cplusplus
 //extern SdCard tf;
 //extern Pixel rgb;
-extern Config g_cfg;      
-//extern Network g_network; 
-extern Preferences prefs; 
+extern Config g_cfg;      // 全局配置文件
+//extern Network g_network; // 网络连接
+extern Preferences prefs; // 声明Preferences对象
 
-extern Display screen;    // object of the screen
+extern Display screen;    // 屏幕对象
 
 //extern Ambient ambLight;  // 光纤传感器对象
 
