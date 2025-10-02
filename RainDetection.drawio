@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.1.2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.1.2" pages="2">
   <diagram name="Page-1" id="9HzUKgybVt1uWYHcZhEx">
     <mxGraphModel dx="1426" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -72,6 +72,84 @@
         </mxCell>
         <mxCell id="u2bzI15BAut1eMohB3Nz-25" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="340" y="580" width="40" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="RiohPwydsptRIAEoBIan" name="Page-2">
+    <mxGraphModel dx="1426" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-2" target="fJi0ittfSD3v_i_R3c3Y-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-2" value="开始" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="281.25" y="230" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-5" target="fJi0ittfSD3v_i_R3c3Y-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-5" target="fJi0ittfSD3v_i_R3c3Y-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-5" value="窗子关闭？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="261.25" y="320" width="120" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-7" target="fJi0ittfSD3v_i_R3c3Y-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-7" value="压力传感器输入1" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="261.25" y="458" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-8" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="311.25" y="428" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-10" target="fJi0ittfSD3v_i_R3c3Y-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-10" value="控制器读取压力值" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="261.25" y="560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="fJi0ittfSD3v_i_R3c3Y-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="541.25" y="392.5" as="sourcePoint" />
+            <mxPoint x="461.25" y="610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="393" />
+              <mxPoint x="510" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-14" value="压力传感器输入0" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="461.25" y="332.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-15" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="391.25" y="338" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-26" target="fJi0ittfSD3v_i_R3c3Y-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fJi0ittfSD3v_i_R3c3Y-26" target="fJi0ittfSD3v_i_R3c3Y-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-26" value="雨感信号开关" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="262.5" y="640" width="118.75" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-28" value="控制" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="311.25" y="600" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-29" value="雨感传感器屏蔽" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="262.505" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-31" value="开" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="320" y="778" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-32" value="雨感传感器响应" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440.005" y="665" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fJi0ittfSD3v_i_R3c3Y-34" value="关" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="390" y="668" width="40" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
