@@ -1,9 +1,78 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.1.2">
   <diagram name="Page-1" id="9HzUKgybVt1uWYHcZhEx">
-    <mxGraphModel>
+    <mxGraphModel dx="1426" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="u2bzI15BAut1eMohB3Nz-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-1" target="u2bzI15BAut1eMohB3Nz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-1" value="开始" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="110" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-2" target="u2bzI15BAut1eMohB3Nz-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-2" target="u2bzI15BAut1eMohB3Nz-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-2" value="窗子关闭？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="200" width="120" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-4" target="u2bzI15BAut1eMohB3Nz-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-4" value="压力传感器输入1" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="338" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-6" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="290" y="308" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-7" target="u2bzI15BAut1eMohB3Nz-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-7" value="控制器读取压力值" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-9" target="u2bzI15BAut1eMohB3Nz-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-9" value="控制机械臂擦雨感（执行3次，间隔5分钟）&lt;div&gt;电动机风扇吹雨感（吹30秒，间隔5分钟）&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="178.75" y="500" width="242.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-11" target="u2bzI15BAut1eMohB3Nz-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-11" value="压力传感器输入0" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="212.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-13" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="218" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-14" value="停止机械臂工作" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="352.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-18" target="u2bzI15BAut1eMohB3Nz-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u2bzI15BAut1eMohB3Nz-18" target="u2bzI15BAut1eMohB3Nz-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-18" value="是否下雨？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="570" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-20" value="雨感潮湿" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-22" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="290" y="678" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-23" value="雨感干燥" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u2bzI15BAut1eMohB3Nz-25" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="340" y="580" width="40" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
